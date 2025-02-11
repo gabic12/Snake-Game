@@ -40,12 +40,12 @@ while game_on:
     #Hitting the wall
     if snake.snake_head.xcor() > 280 or  snake.snake_head.xcor() < -280 or  snake.snake_head.ycor() > 280 or  snake.snake_head.ycor() < -280:
         game_on = False
-        scoreboard.game_over()
+        scoreboard.game_over(score)
 
     #Hitting the tail
     for segment in snake.snake_segments_list[1:]:
         if snake.snake_head.distance(segment) < 10:
             game_on = False
-            scoreboard.game_over()
+            scoreboard.game_over(score)
 
 screen.exitonclick()
